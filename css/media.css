@@ -8,6 +8,15 @@
 	.blank_header {
 		flex-direction: column;
 	}
+	.team{
+		width: 100%;
+	}
+	.footer .contacts {
+		display: block;
+	}
+	.footer{
+		padding: 100px;
+	}
 }
 
 @media screen and (max-width: 780px) {
@@ -29,6 +38,7 @@
 
 	.women {
 		flex-direction: column;
+		display: block;
 	}
 }
 
