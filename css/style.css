@@ -1,0 +1,1184 @@
+/* Основные стили */
+html,
+body {
+    height: 100%;
+    background: #EEF0F1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.clearfix::after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+ul li:last-child {
+    margin-bottom: 0;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+button,
+label {
+    cursor: pointer;
+}
+
+input,
+button,
+textarea {
+    background: none;
+    border: none;
+    outline: none;
+    display: block;
+    width: 100%;
+    font-family: "Inter";
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    display: none;
+}
+
+input::placeholder {
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+input,
+textarea {
+    display: block;
+    resize: none;
+}
+
+body {
+    font-size: 14px;
+    background: #EEF0F1;
+    line-height: 19px;
+    color: #242424;
+    width: 100%;
+    font-family: "Inter", arial, sans-serif;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 15px;
+}
+
+.dn {
+    display: none;
+}
+
+section {
+    padding: 100px 0;
+}
+
+.sec_tit {
+    font-weight: 800;
+    font-size: 42px;
+    line-height: 57px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.color {
+    color: #BE963F;
+}
+
+.dib {
+    display: inline-block;
+}
+
+.hover {
+    transition: 0.3s;
+}
+
+.link {
+    transition: 0.3s;
+}
+
+.link:hover {
+    box-shadow: 0px 6px 5px 2px #836A36;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+
+
+
+
+
+
+/* Сайдбар */
+.sidebar {
+    width: 160px;
+    padding: 10px;
+}
+
+.menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li {
+    margin-bottom: 10px;
+}
+
+.menu a {
+    text-decoration: none;
+    font-family: "Inter";
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 20px;
+    text-align: left;
+    color: #A3ACB8;
+
+}
+
+.menu a.active {
+    font-family: "Inter";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+    color: #1f1f1f;
+
+}
+
+/* Основное содержимое */
+.main-content {
+    margin-left: 180px;
+    padding: 20px;
+    max-width: 900px;
+    text-align: center;
+}
+
+.logo {
+    width: 713px;
+    height: 344px;
+    top: 22px;
+    left: 276px;
+    gap: 0px;
+    opacity: 0px;
+
+}
+
+.tagline {
+    font-size: 14px;
+    margin-top: 10px;
+    color: gray;
+}
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 120px;
+    }
+
+    .main-content {
+        margin-left: 140px;
+    }
+
+    .logo {
+        font-size: 96px;
+    }
+
+    .tagline {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        display: none;
+        /* Убрать сайдбар на маленьких экранах */
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 10px;
+    }
+
+    .logo {
+        font-size: 72px;
+    }
+
+    .tagline {
+        font-size: 10px;
+    }
+}
+
+
+
+.blank_header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+
+.big_img {
+    width: 713px;
+    height: 344px;
+    top: 22px;
+    left: 276px;
+}
+
+.min_txt {
+    width: 164px;
+    height: 38px;
+    top: 24px;
+    left: 1258px;
+}
+
+.description {
+    margin-top: 40px;
+}
+
+.description p {
+    margin: 10px 0;
+}
+
+.description a {
+    font-family: "Inter";
+    text-decoration: none;
+    font-size: 14px;
+    color: #333;
+    margin-right: 10px;
+}
+
+.description a:hover {
+    text-decoration: underline;
+}
+
+.blank_help {
+    background-image: url(../img/icons/bg.jpg);
+    height: 368px;
+    width: 888px;
+    background-repeat: no-repeat;
+    padding: 15px;
+}
+
+.help_kons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.help_circle {
+    background: #A3ACB8;
+    width: 11px;
+    height: 11px;
+    background-color: grey;
+    border-radius: 50%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.blank_main {
+    margin-top: 20px;
+}
+
+.help_kons {
+    display: flex;
+    align-items: center;
+}
+
+.kons_txt {
+    color: #A3ACB8;
+    font-family: "Inter";
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 18.2px;
+    text-align: left;
+
+}
+
+.help_circle {
+    width: 15px;
+    height: 15px;
+    background-color: grey;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+.helpik {
+    display: flex;
+    align-items: center;
+    margin: 80px 0;
+}
+
+.help_tit {
+    font-family: "Inter";
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 44px;
+    letter-spacing: -0.03em;
+    text-align: center;
+    color: #A3ACB8;
+    padding: 0 20px;
+}
+
+.help_desc {
+    font-family: "Inter";
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 44px;
+    letter-spacing: -0.03em;
+    text-align: center;
+    color: #EEF0F1;
+}
+
+.help_btns {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+    justify-content: space-between;
+}
+
+.help_btns .btn {
+    width: 200px;
+    height: 56px;
+    padding: 16px 20px;
+    border-radius: 32px;
+    background: var(--Surface-Link, #FF6900);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.help_btns .btn:hover {
+    background: #e55d00;
+}
+
+.social_btns {
+    display: flex;
+    gap: 10px;
+    margin-left: 15px;
+}
+
+.social_btn {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s ease;
+}
+
+.social_btn i,
+.social_btn img {
+    color: white;
+    width: 24px;
+    height: 24px;
+}
+
+.social_btn.whatsapp {
+    background: var(--Surface-Primary, #EEF0F1);
+}
+
+.social_btn.telegram {
+    background: var(--Surface-Primary, #EEF0F1);
+}
+
+.social_btn:hover {
+    background: #d9dbdd;
+}
+
+.team {
+    margin-top: 50px;
+    width: 888px;
+}
+
+
+
+.team_members {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.team_member {
+    text-align: center;
+}
+
+.team_member img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+}
+
+
+
+
+
+
+
+
+
+.team_member .name {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.team_member .role {
+    color: grey;
+    margin-top: 5px;
+}
+
+.btn_txt {
+    font-family: "Inter";
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: center;
+    color: var(--Text-Inverted-Primary, #EEF0F1);
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+}
+
+.team_tit {
+    font-family: "Inter";
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 44px;
+    letter-spacing: -0.03em;
+    text-align: left;
+
+}
+
+.team_txt {
+    font-family: "Inter";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    text-align: left;
+    color: var(--Text-Secondary, #79828D);
+
+}
+
+
+
+
+
+
+
+
+/* Оформление основного блока команды */
+.team {
+    background: #ffffff;
+    margin: 20px 0;
+    padding: 15px;
+}
+
+.team_tit,
+.team_txt {
+    margin-bottom: 20px;
+}
+
+/* Стили для каждого участника команды */
+.team_member {
+    text-align: center;
+}
+
+.team_member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.role {
+    font-size: 14px;
+    color: #777;
+}
+
+.swiper-container {
+    width: 100%;
+    /* Контейнер слайдера занимает всю ширину */
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+
+.swiper-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    /* Устанавливаем ширину авто, чтобы не было проблем с размерами */
+}
+
+
+.swiper-pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.swiper_wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+
+
+.accordion {
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 888px;
+    margin: 20px auto;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.accordion-item {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.accordion-item:last-child {
+    border-bottom: none;
+}
+
+.acc {
+    padding: 15px 15px 50px;
+}
+
+.accordion-header {
+    background-color: #f7f7f7;
+    width: 100%;
+    text-align: left;
+    padding: 15px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative;
+}
+
+.accordion-header::after {
+    content: '\25BC';
+    /* Стрелка вниз */
+    font-size: 14px;
+    position: absolute;
+    right: 20px;
+    transition: transform 0.3s ease;
+}
+
+.accordion-header.active::after {
+    transform: rotate(180deg);
+    /* Поворот стрелки вверх */
+}
+
+.accordion-header:hover {
+    background-color: #eaeaea;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding: 0 20px;
+    background-color: #fff;
+    font-size: 14px;
+    color: #666;
+}
+
+.accordion-content p {
+    margin: 15px 0;
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 200px;
+    /* Примерное максимальное значение для раскрытия содержимого */
+}
+
+
+
+
+
+.articles {
+    width: 100%;
+    max-width: 888px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.article {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.article h3 {
+    font-size: 20px;
+    margin: 0 0 10px;
+    color: #333;
+}
+
+.article p {
+    font-size: 14px;
+    color: #999;
+}
+
+.article .meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #666;
+}
+
+.orange-btn {
+    background-color: #ff6d00;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 16px;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.art_help {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+
+.footer {
+    background: url('../img/icons/Frame\ 72\ \(1\).jpg') no-repeat center center;
+    background-size: cover;
+    color: white;
+    padding: 200px 90px 15px;
+    text-align: center;
+}
+
+.footer_top {
+    padding-bottom: 200px;
+}
+
+.footer h2 {
+    font-family: "Inter";
+    font-size: 55px;
+    font-weight: 400;
+    line-height: 84px;
+    letter-spacing: -0.03em;
+    text-align: left;
+    width: 500px;
+    margin: 0;
+}
+
+.footer .contacts {
+    display: flex;
+    justify-content: space-around;
+    text-align: left;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer .contact-item {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.footer .contact-item p {
+    font-family: "Inter";
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    text-align: left;
+
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-bottom a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+
+
+.new-section {
+    background-color: #f5f5f5;
+    padding: 40px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.new-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.new-section p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-form label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contact-form textarea {
+    height: 120px;
+}
+
+
+
+
+.submit-btn {
+    background-color: #ff6d00;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #e65c00;
+}
+
+.women {
+    display: flex;
+    align-items: flex-end;
+}
+
+.woman {
+    margin: 5px;
+}
+
+.woman_img {
+    width: 250px;
+    height: 250px;
+}
+
+.wom_img {
+    width: 200px;
+    height: 200px;
+}
+
+.wo_img {
+    width: 170px;
+    height: 170px;
+}
+
+.woman_info {
+    text-align: center;
+}
+
+.woman_name {
+    font-family: "Inter";
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22.4px;
+    color: #1F1F1F;
+}
+
+.woman_prof {
+    font-family: "Inter";
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.6px;
+    color: #1F1F1F;
+
+}
+
+.articles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.article {
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.article:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.meta {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.read-link {
+    color: var(--Surface-Link, #FF6900);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.read-link:hover {
+    color: #e55d00;
+}
+
+.orange-btn {
+    display: block;
+    width: 200px;
+    margin: 20px auto;
+    padding: 10px 20px;
+    text-align: center;
+    background-color: var(--Surface-Link, #FF6900);
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.orange-btn:hover {
+    background-color: #e55d00;
+}
+
+
+
+.overlay {
+    position: fixed;
+    z-index: 5;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none;
+}
+
+.overlay.active {
+    display: block;
+}
+
+.overlay .flex-popap {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay .flex-popap .popap {
+    position: relative;
+    background-color: #fff;
+    padding: 35px 25px;
+    margin: 0 10px;
+    max-width: 450px;
+    overflow: auto;
+}
+
+.popap span {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+.modal {
+    position: fixed;
+    /* фиксированное положение */
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    /* фон */
+    z-index: 1050;
+    opacity: 0;
+    /* по умолчанию модальное окно прозрачно */
+    -webkit-transition: opacity 200ms ease-in;
+    -moz-transition: opacity 200ms ease-in;
+    transition: opacity 200ms ease-in;
+    /* анимация перехода */
+    pointer-events: none;
+    /* элемент невидим для событий мыши */
+    margin: 0;
+    padding: 0;
+}
+
+/* При отображении модального окно */
+.modal:target {
+    opacity: 1;
+    /* делаем окно видимым */
+    pointer-events: auto;
+    /* элемент видим для событий мыши */
+    overflow-y: auto;
+    /* добавляем прокрутку по y, когда элемент не помещается на страницу */
+}
+
+/* ширина модального окна и его отступы от экрана */
+.modal-dialog {
+    position: relative;
+    width: auto;
+    margin: 10px;
+}
+
+@media (min-width: 576px) {
+    .modal-dialog {
+        max-width: 500px;
+        margin: 30px auto;
+        /* отображение окна по центру */
+    }
+}
+
+/* Стили для блока с контентом окна */
+.modal-content {
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: .3rem;
+    outline: 0;
+}
+
+@media (min-width: 768px) {
+    .modal-content {
+        -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    }
+}
+
+/* Стили заголовка окна */
+.modal-header {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 15px;
+    border-bottom: 1px solid #eceeef;
+}
+
+.modal-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 1.5;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+/* Стили кнопки "х" ("Закрыть")  */
+.close {
+    float: right;
+    font-family: sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .5;
+    text-decoration: none;
+}
+
+/* Стили для закрывающей кнопки в фокусе или наведении */
+.close:focus,
+.close:hover {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    opacity: .75;
+}
+
+/* Стили блока основного содержимого окна */
+.modal-body {
+    position: relative;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 15px;
+    overflow: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+.modal-body {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.input-field {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+textarea {
+    height: 100px;
+}
+
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+button {
+    background-color: #ff6f00;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+

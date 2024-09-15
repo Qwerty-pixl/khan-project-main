@@ -1,0 +1,101 @@
+@media screen and (max-width: 1300px) {
+	.container {
+		max-width: 960px;
+	}
+}
+
+@media screen and (max-width: 990px) {
+	.blank_header {
+		flex-direction: column;
+	}
+}
+
+@media screen and (max-width: 780px) {
+	.container {
+		max-width: 510px;
+	}
+
+	.big_img {
+		width: 100%;
+	}
+
+	.blank_help {
+		width: 100%;
+	}
+
+	.woman_info {
+		text-align-last: left;
+	}
+
+	.women {
+		flex-direction: column;
+	}
+}
+
+@media screen and (max-width: 540px) {
+	.container {
+		max-width: 420px;
+	}
+}
+
+@media screen and (max-width: 450px) {
+	.container {
+		max-width: 100%;
+	}
+}
+
+
+/* Add this to your CSS file */
+
+/* Desktop layout */
+.sidebar {
+	width: 200px;
+	/* adjust the width as needed */
+	float: left;
+}
+
+.menu {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.menu li {
+	margin-bottom: 10px;
+}
+
+.menu a {
+	text-decoration: none;
+	color: #333;
+}
+
+.menu a.active {
+	color: #337ab7;
+}
+
+/* Tablet layout (max-width: 768px) */
+@media (max-width: 768px) {
+	.sidebar {
+		width: 150px;
+		/* adjust the width as needed */
+	}
+}
+
+/* Mobile layout (max-width: 480px) */
+@media (max-width: 480px) {
+	.sidebar {
+		width: 100%;
+		/* full-width on mobile */
+		position: relative;
+	}
+
+	.menu {
+		display: none;
+		/* hide the menu by default */
+	}
+
+	.burger {
+		display: block;
+		/* show the burger icon */
+	}
+}
