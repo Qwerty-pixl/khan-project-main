@@ -62,26 +62,6 @@ document.querySelectorAll('.accordion-header').forEach(button => {
 
 
 
-// Add this to your JavaScript file
-
-const burger = document.querySelector('.burger');
-const menu = document.querySelector('.menu');
-
-burger.addEventListener('click', () => {
-    burger.classList.toggle('active');
-    menu.classList.toggle('active');
-});
-
-
-
-function show_popap(id_popap) {
-    var id = "#" + id_popap;
-    $(id).addClass('active');
-}
-
-$(".close_popap").click(function () {
-    $(".overlay").removeClass("active");
-});
 
 
 
@@ -99,4 +79,35 @@ $(".close_popap").click(function () {
 function toggleMenu() {
     var popup = document.getElementById("menuPopup");
     popup.classList.toggle("active");
+}
+
+
+
+
+
+// Функция для открытия попапа
+function openPopup() {
+    document.getElementById('popup').style.display = 'flex';
+}
+
+// Функция для закрытия попапа
+function closePopup() {
+    document.getElementById('popup').style.display = 'none';
+    resetForm();
+}
+
+// Обработка отправки формы
+document.getElementById('popupForm').addEventListener('submit', function (event) {
+    event.preventDefault(); // Предотвращаем стандартную отправку формы
+
+    // Скрываем форму и показываем сообщение об успешной отправке
+    document.getElementById('form-container').style.display = 'none';
+    document.getElementById('successMessage').style.display = 'block';
+});
+
+// Функция сброса формы
+function resetForm() {
+    document.getElementById('popupForm').reset();
+    document.getElementById('form-container').style.display = 'block';
+    document.getElementById('successMessage').style.display = 'none';
 }

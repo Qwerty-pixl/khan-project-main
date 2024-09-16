@@ -1762,22 +1762,25 @@ button:hover {
 
 }
 
-.cakit{
+.cakit {
     max-width: 888px;
     width: 100%;
 }
-.frame{
+
+.frame {
     margin-bottom: 100px;
 }
 
 .cats {
     max-width: 888px;
     margin-left: 20%;
-  }
-  .cat_top {
+}
+
+.cat_top {
     margin-bottom: 20px;
-  }
-  .cat_tit {
+}
+
+.cat_tit {
     font-size: 48px;
     font-weight: 400;
     line-height: 50.4px;
@@ -1785,8 +1788,9 @@ button:hover {
     text-align: left;
     max-width: 888px;
     margin-bottom: 40px;
-  }
-  .img {
+}
+
+.img {
     margin-bottom: 40px;
     max-width: 888px;
     height: 400px;
@@ -1794,48 +1798,199 @@ button:hover {
     border-radius: 4px 0px 0px 0px;
     border: 1px 0px 0px 0px;
     opacity: 0px;
-  }
-  .icon {
+}
+
+.icon {
     max-width: 36px;
     height: 36px;
     gap: 0px;
     opacity: 0px;
-  }
-  .img_text {
+}
+
+.img_text {
     font-size: 18px;
     font-weight: 500px;
-  }
-  .img_icon {
+}
+
+.img_icon {
     display: flex;
     gap: 10px;
     margin-bottom: 40px;
-  }
-  
-  .img__txt {
+}
+
+.img__txt {
     font-size: 18px;
     margin-bottom: 40px;
     max-width: 888px;
-  }
-  .intelligence {
+}
+
+.intelligence {
     font-size: 48px;
     font-weight: 400;
     max-width: 888px;
     line-height: 50px;
     margin-bottom: 50px;
-  }
-  .int_tit {
+}
+
+.int_tit {
     max-width: 888px;
     font-size: 18px;
     font-weight: 400;
     margin-bottom: 30px;
-  }
-  .int_txt {
+}
+
+.int_txt {
     color: #79828d;
     max-width: 888px;
     margin-bottom: 150px;
-  }
-  .int__tit {
+}
+
+.int__tit {
     font-size: 28px;
     font-weight: 400;
     margin-bottom: 30px;
-  }
+}
+
+
+.blo {
+    background: #fff;
+}
+
+
+input {
+    outline: none;
+}
+
+/* Стили для попапа */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    max-width: 587px;
+    width: 100%;
+    text-align: left;
+    border-radius: 10px;
+    position: relative;
+}
+
+.popup h1 {
+    font-family: "Inter", sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+    color: #191D22;
+    margin-bottom: 10px;
+}
+
+.popup p {
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    color: #79828D;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: "Inter", sans-serif;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #B3B3B3;
+}
+
+.form-group textarea {
+    resize: none;
+    height: 100px;
+}
+
+.groups {
+    display: flex;
+    gap: 20px;
+}
+
+.form-group label {
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    color: #79828D;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Стили для кнопки */
+.bbc{
+    width: 100%;
+    max-width: 180px;
+    height: 56px;
+    padding: 15px;
+    background-color: #FF6A00;
+    color: white;
+    border: none;
+    border-radius: 32px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: "Inter", sans-serif;
+    text-align: center;
+}
+
+.bbc:hover {
+    background-color: #e65a00;
+}
+
+/* Сообщение об успешной отправке */
+.success-message {
+    display: none;
+    text-align: center;
+}
+
+.success-message .checkmark {
+    font-size: 40px;
+    color: #FF6A00;
+    margin-bottom: 20px;
+}
+
+.success-message h2 {
+    font-family: "Inter", sans-serif;
+    font-size: 24px;
+    color: #191D22;
+    margin-bottom: 10px;
+}
+
+.success-message p {
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    color: #79828D;
+}
+
+/* Закрывающий крестик */
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #B3B3B3;
+}
+
+.close-btn:hover {
+    color: #000;
+}

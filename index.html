@@ -147,38 +147,47 @@
                         </div>
 
                         <div class="help_btns">
-                            <div id="openModal" class="modal">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
+                            <button class="bbc" onclick="openPopup()">Оставить заявку</button>
 
-                                        <div class="modal-body">
-                                            <a href="#close" title="Close" class="close">×</a>
-                                            <h1 class="sat">Оставьте заявку</h1>
-                                            <p class="sar">Мы свяжемся с вами в течение суток. Если вы раскроете суть обращения — мы
-                                                сможем предложить первые шаги для решения проблемы</p>
-                                            <div class="input-field">
-                                                <label for="name">Ваше имя</label>
-                                                <input type="text" id="name" placeholder="Введите ваше имя">
+                            <!-- Попап с формой -->
+                            <div class="popup" id="popup">
+                                <div class="popup-content">
+                                    <span class="close-btn" onclick="closePopup()">×</span>
+                                    <div id="form-container">
+                                        <h1 class="sat">Оставьте заявку</h1>
+                                        <p class="sar">Мы свяжемся с вами в течение суток. Если вы раскроете суть
+                                            обращения — мы сможем предложить
+                                            первые шаги для решения проблемы</p>
+                                        <form id="popupForm">
+                                            <div class="groups">
+                                                <div class="form-group">
+                                                    <label class="form_text" for="name">Ваше имя</label>
+                                                    <input type="text" id="name" name="name"
+                                                        placeholder="Введите ваше имя" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="form_text" for="phone">Контактный номер</label>
+                                                    <input type="tel" id="phone" name="phone"
+                                                        placeholder="Введите ваш номер телефона" required>
+                                                </div>
                                             </div>
-                                            <div class="input-field">
-                                                <label for="phone">Контактный номер</label>
-                                                <input type="text" id="phone" placeholder="Введите ваш номер телефона">
+                                            <div class="form-group">
+                                                <label class="form_text" for="message">Расскажите о проблеме</label>
+                                                <textarea id="message" name="message"
+                                                    placeholder="Опишите вашу проблему" required></textarea>
                                             </div>
-                                            <div class="input-field">
-                                                <label for="problem">Расскажите о проблеме</label>
-                                                <textarea id="problem" placeholder="Опишите вашу проблему"></textarea>
-                                            </div>
-                                            <div class="checkbox-field">
-                                                <input type="checkbox" id="agree">
-                                                <label for="agree">Согласен с политикой обработки персональных
-                                                    данных</label>
-                                            </div>
-                                            <button>Отправить заявку</button>
-                                        </div>
+                                            <button type="submit" class="bbc">Отправить заявку</button>
+                                        </form>
+                                    </div>
+                                    <div class="success-message" id="successMessage">
+                                        <div class="checkmark">✔</div>
+                                        <h2>Спасибо, заявка принята</h2>
+                                        <p>Мы свяжемся с вами в течение суток и предложим первые шаги для решения задачи
+                                        </p>
                                     </div>
                                 </div>
                             </div>
-                            <a class="btn" href="#openModal"><span class="btn_txt">Оставить заявку</span></a>
+
 
                             <!-- Кнопки WhatsApp и Telegram -->
                             <div class="social_btns">
@@ -283,7 +292,7 @@
                             <div class="frame_txt">Мария Тихомирова, консультант</div>
                             <div class="frame_t">
                                 <div class="frame_text">55к просмотров</div>
-                                <a  href="file.html" class="frame_text">Читать пять минут</a>
+                                <a href="file.html" class="frame_text">Читать пять минут</a>
                             </div>
                         </div>
                         <div class="frame2">
@@ -291,7 +300,7 @@
                             <div class="frame_txt">Мария Тихомирова, консультант</div>
                             <div class="frame_t">
                                 <div class="frame_text">55к просмотров</div>
-                                <a  href="file.html" class="frame_text">Читать пять минут</a>
+                                <a href="file.html" class="frame_text">Читать пять минут</a>
                             </div>
                         </div>
                         <div class="frame3">
@@ -301,7 +310,7 @@
                             <div class="frame_txt">Мария Тихомирова, консультант</div>
                             <div class="frame_t">
                                 <div class="frame_text">55к просмотров</div>
-                                <a  href="file.html" class="frame_text">Читать пять минут</a>
+                                <a href="file.html" class="frame_text">Читать пять минут</a>
                             </div>
                         </div>
                         <div class="frame4">
@@ -311,7 +320,7 @@
                             <div class="frame_txt">Мария Тихомирова, консультант</div>
                             <div class="frame_t">
                                 <div class="frame_text">55к просмотров</div>
-                                <a  href="file.html" class="frame_text">Читать пять минут</a>
+                                <a href="file.html" class="frame_text">Читать пять минут</a>
                             </div>
                         </div>
                         <div class="frame5">
@@ -319,7 +328,7 @@
                             <div class="frame_txt">Мария Тихомирова, консультант</div>
                             <div class="frame_t">
                                 <div class="frame_text">55к просмотров</div>
-                                <a  href="file.html" class="frame_text">Читать пять минут</a>
+                                <a href="file.html" class="frame_text">Читать пять минут</a>
                             </div>
                         </div>
                         <div class="frame6">
@@ -327,7 +336,7 @@
                             <div class="frame_txt">Мария Тихомирова, консультант</div>
                             <div class="frame_t">
                                 <div class="frame_text">55к просмотров</div>
-                                <a  href="file.html" class="frame_text">Читать пять минут</a>
+                                <a href="file.html" class="frame_text">Читать пять минут</a>
                             </div>
                         </div>
                     </div>
