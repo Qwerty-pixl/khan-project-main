@@ -1,83 +1,179 @@
-<nav class="navbar">
-    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
-    <ul class="nav-links">
-      <li><a href="#practices">Практики</a></li>
-      <li><a href="#consultation">Консультация</a></li>
-      <li><a href="#team">Команда</a></li>
-      <li><a href="#questions">Вопросы</a></li>
-      <li><a href="#articles">Статьи</a></li>
-      <li><a href="#contacts">Контакты</a></li>
-    </ul>
-  </nav>
-  
-  <style>
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: #fff;
-      padding: 10px 20px;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 10;
-    }
-  
-    .menu-icon {
-      display: none;
-    }
-  
-    .nav-links {
-      display: flex;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-  
-    .nav-links li {
-      margin-right: 20px;
-    }
-  
-    .nav-links a {
-      text-decoration: none;
-      color: #333;
-      font-weight: bold;
-    }
-  
-    @media screen and (max-width: 768px) {
-      .menu-icon {
-        display: block;
-        cursor: pointer;
-      }
-  
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background-color: #fff;
-        padding: 20px;
-        text-align: center;
-        z-index: 10;
-      }
-  
-      .nav-links li {
-        margin-bottom: 10px;
-      }
-    }
-  
-    /* Style for active link (optional) */
-    .nav-links li a.active {
-      color: #f00; /* Change color to red */
-    }
-  </style>
-  
-  <script>
-    function toggleMenu() {
-      const navLinks = document.querySelector('.nav-links');
-      navLinks.style.display = navLinks.style.display === 'none' ? 'flex' : 'none';
-    }
-  </script>
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLANC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="blank_header">
+            <header>
+                <nav class="navbar">
+                    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+                    <ul class="nav-links">
+                        <li><a href="#practices">Практики</a></li>
+                        <li><a href="#consultation">Консультация</a></li>
+                        <li><a href="#team">Команда</a></li>
+                        <li><a href="#questions">Вопросы</a></li>
+                        <li><a href="#articles">Статьи</a></li>
+                        <li><a href="#contacts">Контакты</a></li>
+                    </ul>
+                </nav>
+                
+                <!-- Pop-up Menu -->
+                <div id="menuPopup" class="menu-popup">
+                    <div class="menu-popup-content">
+                        <span class="close" onclick="toggleMenu()">&times;</span>
+                        <ul class="menu-popup-links">
+                            <li><a href="#practices">Практики</a></li>
+                            <li><a href="#consultation">Консультация</a></li>
+                            <li><a href="#team">Команда</a></li>
+                            <li><a href="#questions">Вопросы</a></li>
+                            <li><a href="#articles">Статьи</a></li>
+                            <li><a href="#contacts">Контакты</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                
+                <a class="btn hivi" href="#openModal"><span class="btn_txt">Обратиться</span></a>
+            </header>
+            <div class="blank_text">
+                
+                <a href="index.html" class="hef"> На главную</a>
+
+                <div class="art">
+                    <div class="titre">
+                        <div class="titre_txt">
+                            <h1 class="bakk">Статьи</h1>
+                            <p class="bak">Описание того что пишем, зачем пишем и для кого пишем</p>
+                        </div>
+                        <a href="article.html" class="titre-btn">Все статьи</a>
+                    </div>
+
+                    <div class="frame">
+                        <div class="frame1">
+                            <div class="frame_tit">Сколько стоит открыть ИП</div>
+                            <div class="frame_txt">Мария Тихомирова, консультант</div>
+                            <div class="frame_t">
+                                <div class="frame_text">55к просмотров</div>
+                                <a href="file.html" class="frame_text">Читать пять минут</a>
+                            </div>
+                        </div>
+                        <div class="frame2">
+                            <div class="frame_tit">Сколько стоит открыть ИП</div>
+                            <div class="frame_txt">Мария Тихомирова, консультант</div>
+                            <div class="frame_t">
+                                <div class="frame_text">55к просмотров</div>
+                                <div class="frame_text">Читать пять минут</div>
+                            </div>
+                        </div>
+                        <div class="frame3">
+                            <div class="frame_tit">
+                                Заголовок статьи в две строчки, простите я работаю 15 час
+                                сегодня
+                            </div>
+                            <div class="frame_txt">Мария Тихомирова, консультант</div>
+                            <div class="frame_t qwer">
+                                <div class="frame_text">55к просмотров</div>
+                                <div class="frame_text">Читать пять минут</div>
+                            </div>
+                        </div>
+                        <div class="frame4">
+                            <div class="frame_tit">
+                                Заголовок статьи в две строчки, простите я работаю 15 час
+                                сегодня
+                            </div>
+                            <div class="frame_txt">Мария Тихомирова, консультант</div>
+                            <div class="frame_t">
+                                <div class="frame_text">55к просмотров</div>
+                                <div class="frame_text">Читать пять минут</div>
+                            </div>
+                        </div>
+                        <div class="frame5">
+                            <div class="frame_tit">
+                                Как правильно банкротиться
+                            </div>
+                            <div class="frame_txt">Мария Тихомирова, консультант</div>
+                            <div class="frame_t">
+                                <div class="frame_text">55к просмотров</div>
+                                <div class="frame_text">Читать пять минут</div>
+                            </div>
+                        </div>
+                        <div class="frame6">
+                            <div class="frame_tit">
+                                Сколько стоит открыть ИП
+                            </div>
+                            <div class="frame_txt">Мария Тихомирова, консультант</div>
+                            <div class="frame_t">
+                                <div class="frame_text">55к просмотров</div>
+                                <div class="frame_text">Читать пять минут</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+            <div class="blank_txt">
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer_top">
+                <h2>Свяжитесь с нами, мы разберемся</h2>
+                <div class="contacts">
+                    <div class="contact-item">
+                        <p>Позвоните</p>
+                        <p><a href="tel:+79214306384">+7 921 430 63 84</a></p>
+
+                    </div>
+                    <div class="contact-item">
+                        <p>Напишите</p>
+                        <p><a href="mailto:blond@legal.ru">blond@legal.ru</a></p>
+                        <p><a href="https://t.me/blondlegal" target="_blank">@blondlegal</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <p>Общайтесь лично</p>
+                        <p>Санкт-Петербург, улица Торфяная, дом 17, литер Б</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>ИП Бородина Анастасия Алексеевна</p>
+                <div>
+                    <a href="#">Политика конфиденциальности</a>
+                    <span>|</span>
+                    <a href="#">Дизайн — Понеделка</a>
+                </div>
+                <p>2024</p>
+            </div>
+        </div>
+
+
+
+
+
+
+    </div>
+    <script src="js/core.js"></script>
+</body>
+
+
+</html>

@@ -487,7 +487,7 @@ section {
 .hivi {
     display: block;
     margin-top: 800px;
-    width:  140px;
+    width: 140px;
     height: 56px;
     top: 947px;
     left: 24px;
@@ -744,7 +744,7 @@ section {
     letter-spacing: -0.03em;
     text-align: left;
     width: 500px;
-    margin-left: 60px;
+    margin-left: 200px;
     margin-bottom: 30px;
 }
 
@@ -1132,7 +1132,7 @@ section {
 .close {
     float: right;
     font-family: sans-serif;
-    font-size: 24px;
+    font-size: 40px;
     font-weight: 700;
     line-height: 1;
     color: #000;
@@ -1262,7 +1262,7 @@ button:hover {
     cursor: pointer;
 }
 
-@media screen and (max-width: 990px) {
+@media screen and (max-width: 768px) {
     .nav-links {
         position: absolute;
         top: 60px;
@@ -1278,6 +1278,9 @@ button:hover {
         margin: 10px 0;
     }
 
+    .menu-icon {
+        display: block;
+    }
 }
 
 .nav-links.show {
@@ -1560,7 +1563,7 @@ button:hover {
 }
 
 .art {
-    margin: 200px 0;
+    margin: 300px 0;
 }
 
 
@@ -1605,9 +1608,43 @@ button:hover {
 
 
 
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
 
+/* Навигационные ссылки */
+.nav-links {
+    list-style: none;
+    gap: 20px;
+}
 
-/* Popup menu hidden by default */
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    font-family: "Inter";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+
+}
+
+/* Бургер иконка по умолчанию скрыта */
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Попап меню скрыто по умолчанию */
 .menu-popup {
     display: none;
     position: fixed;
@@ -1616,20 +1653,187 @@ button:hover {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(10px);
     justify-content: center;
     align-items: center;
-    z-index: 9999;
+}
+
+/* Активный попап */
+.menu-popup.active {
+    display: flex;
 }
 
 .menu-popup-content {
-    background-color: white;
-    padding: 20px;
+    backdrop-filter: blur(5px);
+    padding: 150px 300px;
     border-radius: 8px;
     text-align: center;
 }
 
-/* Active state to show the popup */
-.menu-popup.active {
-    display: flex;
+/* Кнопка закрытия */
+.close {
+    font-size: 40px;
+    font-weight: 100;
+    cursor: pointer;
+    margin-left: 300px;
 }
+
+.cl {
+    padding: 100px;
+
+}
+
+.sat {
+    font-family: "Inter";
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 44px;
+    letter-spacing: -0.03em;
+    text-align: left;
+    color: var(--Text-Primary, #191D22);
+
+}
+
+.sar {
+    font-family: "Inter";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    text-align: left;
+    color: var(--Text-Secondary, #79828D);
+
+}
+
+.menu-popup-links {
+
+    list-style: none;
+    padding: 0;
+}
+
+.menu-popup-links li {
+    margin: 10px 0;
+}
+
+.menu-popup-links li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+}
+
+/* Медиа-запрос для экранов меньше 980px */
+@media (max-width: 980px) {
+
+    /* Скрываем ссылки и показываем бургер-меню */
+    .nav-links {
+        display: none;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+}
+
+.bak {
+    font-family: "Inter";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    text-align: left;
+    color: var(--Text-Secondary, #79828D);
+
+}
+
+.bakk {
+    font-family: "Inter";
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 50.4px;
+    letter-spacing: -0.04em;
+    text-align: left;
+
+}
+
+.hef {
+    font-family: "Inter";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+    color: var(--Text-Primary, #191D22);
+
+}
+
+.cakit{
+    max-width: 888px;
+    width: 100%;
+}
+
+
+.cats {
+    max-width: 888px;
+    margin-left: 20%;
+  }
+  .cat_top {
+    margin-bottom: 20px;
+  }
+  .cat_tit {
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 50.4px;
+    letter-spacing: -0.04em;
+    text-align: left;
+    max-width: 888px;
+    margin-bottom: 40px;
+  }
+  .img {
+    margin-bottom: 40px;
+    max-width: 888px;
+    height: 400px;
+    gap: 0px;
+    border-radius: 4px 0px 0px 0px;
+    border: 1px 0px 0px 0px;
+    opacity: 0px;
+  }
+  .icon {
+    max-width: 36px;
+    height: 36px;
+    gap: 0px;
+    opacity: 0px;
+  }
+  .img_text {
+    font-size: 18px;
+    font-weight: 500px;
+  }
+  .img_icon {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 40px;
+  }
+  
+  .img__txt {
+    font-size: 18px;
+    margin-bottom: 40px;
+    max-width: 888px;
+  }
+  .intelligence {
+    font-size: 48px;
+    font-weight: 400;
+    max-width: 888px;
+    line-height: 50px;
+    margin-bottom: 50px;
+  }
+  .int_tit {
+    max-width: 888px;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 30px;
+  }
+  .int_txt {
+    color: #79828d;
+    max-width: 888px;
+    margin-bottom: 150px;
+  }
+  .int__tit {
+    font-size: 28px;
+    font-weight: 400;
+    margin-bottom: 30px;
+  }

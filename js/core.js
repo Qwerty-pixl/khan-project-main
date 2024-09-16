@@ -96,8 +96,7 @@ $(".close_popap").click(function () {
 
 
 
-
 function toggleMenu() {
     var popup = document.getElementById("menuPopup");
-    popup.classList.toggle("active"); // Добавляем или удаляем класс active
+    popup.classList.toggle("active");
 }

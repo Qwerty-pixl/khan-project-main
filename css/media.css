@@ -5,8 +5,8 @@
 }
 
 @media screen and (max-width: 990px) {
-	.blank_header {
-		flex-direction: column;
+	.blank_header{
+		display: block;
 	}
 	.team{
 		width: 100%;
@@ -38,6 +38,7 @@
 	
     .menu-icon {
         display: block;
+		margin-top: 30px;
         margin-bottom: -1650px;
 		margin-left: 200px;
 		background: #fff;
