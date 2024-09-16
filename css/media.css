@@ -45,6 +45,12 @@
 		padding: 16px;
 		border-radius: 32px;
     }
+	.cats{
+		margin-left: 0;
+	}
+	.img_icon{
+		margin-top: 100px;
+	}
 	
 }
 

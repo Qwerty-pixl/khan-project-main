@@ -1766,7 +1766,9 @@ button:hover {
     max-width: 888px;
     width: 100%;
 }
-
+.frame{
+    margin-bottom: 100px;
+}
 
 .cats {
     max-width: 888px;
