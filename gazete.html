@@ -1,19 +1,389 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Адаптивный Хедер с Бургером</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
 </head>
 <style>
+    html,
+    body {
+        height: 100%;
+        background: #eef0f1;
+    }
 
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .clearfix::after {
+        clear: both;
+        content: "";
+        display: table;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    ul li:last-child {
+        margin-bottom: 0;
+    }
+
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    button,
+    label {
+        cursor: pointer;
+    }
+
+    input::placeholder {
+        color: inherit;
+    }
+
+    button {
+        cursor: pointer;
+    }
+
+    input,
+    textarea {
+        display: block;
+        resize: none;
+    }
+
+    body {
+        font-size: 14px;
+        line-height: 19px;
+        color: #242424;
+        width: 100%;
+        font-family: "Manrope", arial, sans-serif;
+    }
+
+    .container {
+        max-width: 1480px;
+        width: 100%;
+        min-width: 320px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+
+    input,
+    button,
+    textarea {
+        background: none;
+        border: none;
+        outline: none;
+        display: block;
+        width: 100%;
+        font-family: inherit;
+        font-size: inherit;
+        font-weight: inherit;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+        display: none;
+    }
+
+    .dn {
+        display: none;
+    }
+
+    section {
+        padding: 100px 0;
+    }
+
+    .flex {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .li_practic {
+        font-weight: 400;
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .li {
+        margin-bottom: 5px;
+    }
+
+    .header {
+        display: flex;
+        gap: 200px;
+    }
+
+    .cats {
+        max-width: 888px;
+        margin-left: 20%;
+    }
+
+    .cat_top {
+        margin-bottom: 20px;
+    }
+
+    .cat_tit {
+        font-size: 48px;
+        font-weight: 400;
+        line-height: 50.4px;
+        letter-spacing: -0.04em;
+        text-align: left;
+        max-width: 888px;
+        margin-bottom: 40px;
+    }
+
+    .img {
+        margin-bottom: 40px;
+        max-width: 888px;
+        height: 400px;
+        gap: 0px;
+        border-radius: 4px 0px 0px 0px;
+        border: 1px 0px 0px 0px;
+        opacity: 0px;
+    }
+
+    .icon {
+        max-width: 36px;
+        height: 36px;
+        gap: 0px;
+        opacity: 0px;
+    }
+
+    .img_text {
+        font-size: 18px;
+        font-weight: 500px;
+    }
+
+    .img_icon {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 40px;
+    }
+
+    .img__txt {
+        font-size: 18px;
+        margin-bottom: 40px;
+        max-width: 888px;
+    }
+
+    .intelligence {
+        font-size: 48px;
+        font-weight: 400;
+        max-width: 888px;
+        line-height: 50px;
+        margin-bottom: 50px;
+    }
+
+    .int_tit {
+        max-width: 888px;
+        font-size: 18px;
+        font-weight: 400;
+        margin-bottom: 30px;
+    }
+
+    .int_txt {
+        color: #79828d;
+        max-width: 888px;
+        margin-bottom: 150px;
+    }
+
+    .int__tit {
+        font-size: 28px;
+        font-weight: 400;
+        margin-bottom: 30px;
+    }
+
+
+    .frame {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        /* Default: 3 columns */
+        grid-gap: 10px;
+        max-width: 888px;
+        margin: 0 auto;
+    }
+
+    .frame1,
+    .frame2,
+    .frame3,
+    .frame4,
+    .frame5,
+    .frame6 {
+        background: #fff;
+        padding: 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .frame1,
+    .frame3,
+    .frame5 {
+        grid-column: span 2;
+        /* Span 2 columns */
+    }
+
+    .frame_tit {
+        font-size: 18px;
+        font-weight: 500;
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    .frame_txt {
+        font-size: 14px;
+        color: #79828d;
+        margin-bottom: 10px;
+    }
+
+    .frame_t {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    @media (max-width: 1024px) {
+        .frame {
+            grid-template-columns: repeat(2, 1fr);
+            /* 2 columns for medium screens */
+        }
+
+        .frame1,
+        .frame3,
+        .frame5 {
+            grid-column: span 2;
+            /* Still span full width */
+        }
+    }
+
+    @media (max-width: 768px) {
+        .frame {
+            grid-template-columns: 1fr;
+            /* 1 column for smaller screens */
+        }
+
+        .frame1,
+        .frame3,
+        .frame5,
+        .frame2,
+        .frame4,
+        .frame6 {
+            grid-column: span 1;
+            /* No spanning needed for single column */
+        }
+    }
+
+    .qwer {
+        margin-top: 170px;
+    }
+
+    .footer {
+        background: url('../img/icons/Frame\ 72\ \(1\).jpg') no-repeat center center;
+        background-size: cover;
+        color: white;
+        padding: 200px 200px 15px;
+        text-align: center;
+    }
+
+    .footer_top {
+        padding-bottom: 200px;
+    }
+
+    .footer h2 {
+        font-family: "Inter";
+        font-size: 55px;
+        font-weight: 400;
+        line-height: 84px;
+        letter-spacing: -0.03em;
+        text-align: left;
+        width: 500px;
+        margin-left: 60px;
+        margin-bottom: 30px;
+    }
+
+    .footer .contacts {
+        display: flex;
+        justify-content: space-around;
+        text-align: left;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .footer .contact-item {
+        flex: 1;
+        padding: 0 20px;
+    }
+
+    .footer .contact-item p {
+        font-family: "Inter";
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 18px;
+        text-align: left;
+        width: 200px;
+    }
+
+    .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .footer-bottom a {
+        font-family: "Inter";
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 19.6px;
+        text-align: left;
+        color: #5B636E;
+        text-decoration: none;
+        margin: 0 15px;
+    }
+
+    .footer-bottom p {
+        margin: 0;
+        font-family: "Inter";
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 19.6px;
+        text-align: left;
+        color: #5B636E;
+    }
+
+    @media screen and (max-width: 990px) {
+        .footer .contacts {
+            display: block;
+        }
+
+        .footer {
+            padding: 100px 15px 0 30px;
+        }
+
+        .footer h2 {
+            width: 100%;
+            margin: 0;
+        }
+
+        .frame1 {
+            width: 100%;
+            margin-left: 0;
+        }
+
+    }
 </style>
 
 <body>
     <div class="container">
-        <div class="kiti">
+        <section>
             <header>
                 <nav class="navbar">
                     <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
@@ -27,54 +397,157 @@
                     </ul>
                 </nav>
             </header>
-            <div class="kitti">
-                <a href="#"> На главную</a>
-                <div class="kat">
-                    <span class="data">02.26.2024</span>
-                    <h1 class="kit_tit">Правда ли,​ что из ок­на может выпасть только глупый кот?</h1>
+        </section>
+        <section class="cat">
+            <div class="container">
+                <div class="cats">
+                    <div class="cat_top">02.26.2024</div>
+                    <div class="cat_tit">
+                        Правда ли,​ что из ок­на может выпасть только глупый кот?
+                    </div>
+                    <div class="img"><img src="./img//icons/photo_2024-09-16_18-15-47.jpg" alt=""></div>
+                    <div class="img_icon">
+                        <div class="icon"><img src="./img/icons/Ellipse 1.svg" alt=""></div>
+                        <div class="img_tit">
+                            <div class="img_text">Ольга Мягченко</div>
+                            <div class="img_txt">
+                                Разобралась, почему кошки падают из окон
+                            </div>
+                        </div>
+                    </div>
+                    <div class="img__txt">
+                        Многие уверены, что их кошки умеют оценивать опасность высоты,
+                        поэтому никогда не выпрыгнут из окна.
+                    </div>
+                    <div class="img__txt">
+                        Но статистика говорит об обратном: ежегодно тысячи кошек выпадают из
+                        окон и получают травмы разной степени тяжести. Некоторые животные
+                        погибают, другие теряются, и найти их удается далеко не всегда.
+                    </div>
+                    <div class="img__txt">
+                        Почему так происходит и означает ли это, что домашние кошки глупые,
+                        разбираемся в этой статье
+                    </div>
+                    <div class="intelligence">
+                        Как интеллект кошки влияет на&nbsp;вероятность падения
+                    </div>
+                    <div class="int_tit">
+                        Кошки никогда не прыгают из окна специально. Падение — это всегда
+                        случайность, которая может произойти с любым котом. Даже если ваш
+                        питомец знает команды, регулярно решает головоломки и вообще умница,
+                        это не гарантирует того, что он никогда не выпадет из окна по
+                        неосторожности.
+                    </div>
+                    <div class="int_tit">
+                        По этой же причине кошку невозможно приучить не выпадать из окон.
+                        Как человека нельзя приучить, например, не спотыкаться. Поэтому
+                        неважно, насколько умный или глупый ваш кот: это может произойти с
+                        любым животным.
+                    </div>
+                    <div class="int_txt">
+                        Безопасность высотных «полетов» для кошек сильно преувеличена.
+                        Лучший способ защитить своего питомца — сетки-антикошки. С их
+                        помощью питомец сможет безопасно исследовать окружающий мир, а вы —
+                        спокойно оставлять окна открытыми и наслаждаться свежим воздухом.
+                    </div>
+                    <div class="int__tit">Читайте также</div>
+                    <div class="frame flex">
+                        <div class="frame1">
+                            <div class="frame_tit">Сколько стоит открыть ИП</div>
+                            <div class="frame_txt">Мария Тихомирова, консультант</div>
+                            <div class="frame_t">
+                                <div class="frame_text">55к просмотров</div>
+                                <div class="frame_text">Читать пять минут</div>
+                            </div>
+                        </div>
+                        <div class="frame2">
+                            <div class="frame_tit">Сколько стоит открыть ИП</div>
+                            <div class="frame_txt">Мария Тихомирова, консультант</div>
+                            <div class="frame_t">
+                                <div class="frame_text">55к просмотров</div>
+                                <div class="frame_text">Читать пять минут</div>
+                            </div>
+                        </div>
+                        <div class="frame3">
+                            <div class="frame_tit">
+                                Заголовок статьи в две строчки, простите я работаю 15 час
+                                сегодня
+                            </div>
+                            <div class="frame_txt">Мария Тихомирова, консультант</div>
+                            <div class="frame_t qwer">
+                                <div class="frame_text">55к просмотров</div>
+                                <div class="frame_text">Читать пять минут</div>
+                            </div>
+                        </div>
+                        <div class="frame4">
+                            <div class="frame_tit">
+                                Заголовок статьи в две строчки, простите я работаю 15 час
+                                сегодня
+                            </div>
+                            <div class="frame_txt">Мария Тихомирова, консультант</div>
+                            <div class="frame_t">
+                                <div class="frame_text">55к просмотров</div>
+                                <div class="frame_text">Читать пять минут</div>
+                            </div>
+                        </div>
+                        <div class="frame5">
+                            <div class="frame_tit">
+                                Как правильно банкротиться
+                            </div>
+                            <div class="frame_txt">Мария Тихомирова, консультант</div>
+                            <div class="frame_t">
+                                <div class="frame_text">55к просмотров</div>
+                                <div class="frame_text">Читать пять минут</div>
+                            </div>
+                        </div>
+                        <div class="frame6">
+                            <div class="frame_tit">
+                                Сколько стоит открыть ИП
+                            </div>
+                            <div class="frame_txt">Мария Тихомирова, консультант</div>
+                            <div class="frame_t">
+                                <div class="frame_text">55к просмотров</div>
+                                <div class="frame_text">Читать пять минут</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </section>
 
+    </div>
+    <div class="footer">
+        <div class="footer_top">
+            <h2>Свяжитесь с нами, мы разберемся</h2>
+            <div class="contacts">
+                <div class="contact-item">
+                    <p>Позвоните</p>
+                    <p><a href="tel:+79214306384">+7 921 430 63 84</a></p>
 
-
-
+                </div>
+                <div class="contact-item">
+                    <p>Напишите</p>
+                    <p><a href="mailto:blond@legal.ru">blond@legal.ru</a></p>
+                    <p><a href="https://t.me/blondlegal" target="_blank">@blondlegal</a></p>
+                </div>
+                <div class="contact-item">
+                    <p>Общайтесь лично</p>
+                    <p>Санкт-Петербург, улица Торфяная, дом 17, литер Б</p>
+                </div>
+            </div>
         </div>
-        <div class="footer">
-            <div class="footer_top">
-                <h2>Свяжитесь с нами, мы разберемся</h2>
-                <div class="contacts">
-                    <div class="contact-item">
-                        <p>Позвоните</p>
-                        <p><a href="tel:+79214306384">+7 921 430 63 84</a></p>
-
-                    </div>
-                    <div class="contact-item">
-                        <p>Напишите</p>
-                        <p><a href="mailto:blond@legal.ru">blond@legal.ru</a></p>
-                        <p><a href="https://t.me/blondlegal" target="_blank">@blondlegal</a></p>
-                    </div>
-                    <div class="contact-item">
-                        <p>Общайтесь лично</p>
-                        <p>Санкт-Петербург, улица Торфяная, дом 17, литер Б</p>
-                    </div>
-                </div>
+        <div class="footer-bottom">
+            <p>ИП Бородина Анастасия Алексеевна</p>
+            <div>
+                <a href="#">Политика конфиденциальности</a>
+                <span>|</span>
+                <a href="#">Дизайн — Понеделка</a>
             </div>
-            <div class="footer-bottom">
-                <p>ИП Бородина Анастасия Алексеевна</p>
-                <div>
-                    <a href="#">Политика конфиденциальности</a>
-                    <span>|</span>
-                    <a href="#">Дизайн — Понеделка</a>
-                </div>
-                <p>2024</p>
-            </div>
+            <p>2024</p>
         </div>
     </div>
 
+
 </body>
-<script>
-
-
-</script>
 
 </html>

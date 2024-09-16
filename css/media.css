@@ -17,6 +17,9 @@
 	.footer{
 		padding: 100px;
 	}
+	.a{
+		margin: 0;
+	}
 }
 
 @media screen and (max-width: 780px) {
