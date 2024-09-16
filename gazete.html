@@ -1,389 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>BLANC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
 </head>
-<style>
-    html,
-    body {
-        height: 100%;
-        background: #eef0f1;
-    }
-
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    .clearfix::after {
-        clear: both;
-        content: "";
-        display: table;
-    }
-
-    a {
-        color: inherit;
-        text-decoration: none;
-    }
-
-    li {
-        list-style: none;
-    }
-
-    ul li:last-child {
-        margin-bottom: 0;
-    }
-
-    img {
-        display: block;
-        width: 100%;
-        height: auto;
-    }
-
-    button,
-    label {
-        cursor: pointer;
-    }
-
-    input::placeholder {
-        color: inherit;
-    }
-
-    button {
-        cursor: pointer;
-    }
-
-    input,
-    textarea {
-        display: block;
-        resize: none;
-    }
-
-    body {
-        font-size: 14px;
-        line-height: 19px;
-        color: #242424;
-        width: 100%;
-        font-family: "Manrope", arial, sans-serif;
-    }
-
-    .container {
-        max-width: 1480px;
-        width: 100%;
-        min-width: 320px;
-        margin: 0 auto;
-        padding: 0 15px;
-    }
-
-    input,
-    button,
-    textarea {
-        background: none;
-        border: none;
-        outline: none;
-        display: block;
-        width: 100%;
-        font-family: inherit;
-        font-size: inherit;
-        font-weight: inherit;
-    }
-
-    input[type="radio"],
-    input[type="checkbox"] {
-        display: none;
-    }
-
-    .dn {
-        display: none;
-    }
-
-    section {
-        padding: 100px 0;
-    }
-
-    .flex {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-
-    .li_practic {
-        font-weight: 400;
-        font-size: 16px;
-        margin-bottom: 10px;
-    }
-
-    .li {
-        margin-bottom: 5px;
-    }
-
-    .header {
-        display: flex;
-        gap: 200px;
-    }
-
-    .cats {
-        max-width: 888px;
-        margin-left: 20%;
-    }
-
-    .cat_top {
-        margin-bottom: 20px;
-    }
-
-    .cat_tit {
-        font-size: 48px;
-        font-weight: 400;
-        line-height: 50.4px;
-        letter-spacing: -0.04em;
-        text-align: left;
-        max-width: 888px;
-        margin-bottom: 40px;
-    }
-
-    .img {
-        margin-bottom: 40px;
-        max-width: 888px;
-        height: 400px;
-        gap: 0px;
-        border-radius: 4px 0px 0px 0px;
-        border: 1px 0px 0px 0px;
-        opacity: 0px;
-    }
-
-    .icon {
-        max-width: 36px;
-        height: 36px;
-        gap: 0px;
-        opacity: 0px;
-    }
-
-    .img_text {
-        font-size: 18px;
-        font-weight: 500px;
-    }
-
-    .img_icon {
-        display: flex;
-        gap: 10px;
-        margin-bottom: 40px;
-    }
-
-    .img__txt {
-        font-size: 18px;
-        margin-bottom: 40px;
-        max-width: 888px;
-    }
-
-    .intelligence {
-        font-size: 48px;
-        font-weight: 400;
-        max-width: 888px;
-        line-height: 50px;
-        margin-bottom: 50px;
-    }
-
-    .int_tit {
-        max-width: 888px;
-        font-size: 18px;
-        font-weight: 400;
-        margin-bottom: 30px;
-    }
-
-    .int_txt {
-        color: #79828d;
-        max-width: 888px;
-        margin-bottom: 150px;
-    }
-
-    .int__tit {
-        font-size: 28px;
-        font-weight: 400;
-        margin-bottom: 30px;
-    }
-
-
-    .frame {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        /* Default: 3 columns */
-        grid-gap: 10px;
-        max-width: 888px;
-        margin: 0 auto;
-    }
-
-    .frame1,
-    .frame2,
-    .frame3,
-    .frame4,
-    .frame5,
-    .frame6 {
-        background: #fff;
-        padding: 20px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    .frame1,
-    .frame3,
-    .frame5 {
-        grid-column: span 2;
-        /* Span 2 columns */
-    }
-
-    .frame_tit {
-        font-size: 18px;
-        font-weight: 500;
-        margin-bottom: 10px;
-        color: #333;
-    }
-
-    .frame_txt {
-        font-size: 14px;
-        color: #79828d;
-        margin-bottom: 10px;
-    }
-
-    .frame_t {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    @media (max-width: 1024px) {
-        .frame {
-            grid-template-columns: repeat(2, 1fr);
-            /* 2 columns for medium screens */
-        }
-
-        .frame1,
-        .frame3,
-        .frame5 {
-            grid-column: span 2;
-            /* Still span full width */
-        }
-    }
-
-    @media (max-width: 768px) {
-        .frame {
-            grid-template-columns: 1fr;
-            /* 1 column for smaller screens */
-        }
-
-        .frame1,
-        .frame3,
-        .frame5,
-        .frame2,
-        .frame4,
-        .frame6 {
-            grid-column: span 1;
-            /* No spanning needed for single column */
-        }
-    }
-
-    .qwer {
-        margin-top: 170px;
-    }
-
-    .footer {
-        background: url('../img/icons/Frame\ 72\ \(1\).jpg') no-repeat center center;
-        background-size: cover;
-        color: white;
-        padding: 200px 200px 15px;
-        text-align: center;
-    }
-
-    .footer_top {
-        padding-bottom: 200px;
-    }
-
-    .footer h2 {
-        font-family: "Inter";
-        font-size: 55px;
-        font-weight: 400;
-        line-height: 84px;
-        letter-spacing: -0.03em;
-        text-align: left;
-        width: 500px;
-        margin-left: 60px;
-        margin-bottom: 30px;
-    }
-
-    .footer .contacts {
-        display: flex;
-        justify-content: space-around;
-        text-align: left;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    .footer .contact-item {
-        flex: 1;
-        padding: 0 20px;
-    }
-
-    .footer .contact-item p {
-        font-family: "Inter";
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 18px;
-        text-align: left;
-        width: 200px;
-    }
-
-    .footer-bottom {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .footer-bottom a {
-        font-family: "Inter";
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 19.6px;
-        text-align: left;
-        color: #5B636E;
-        text-decoration: none;
-        margin: 0 15px;
-    }
-
-    .footer-bottom p {
-        margin: 0;
-        font-family: "Inter";
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 19.6px;
-        text-align: left;
-        color: #5B636E;
-    }
-
-    @media screen and (max-width: 990px) {
-        .footer .contacts {
-            display: block;
-        }
-
-        .footer {
-            padding: 100px 15px 0 30px;
-        }
-
-        .footer h2 {
-            width: 100%;
-            margin: 0;
-        }
-
-        .frame1 {
-            width: 100%;
-            margin-left: 0;
-        }
-
-    }
-</style>
 
 <body>
     <div class="container">
-        <section>
+        <div class="blank_header">
             <header>
                 <nav class="navbar">
                     <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
@@ -396,62 +33,249 @@
                         <li><a href="#contacts">Контакты</a></li>
                     </ul>
                 </nav>
-            </header>
-        </section>
-        <section class="cat">
-            <div class="container">
-                <div class="cats">
-                    <div class="cat_top">02.26.2024</div>
-                    <div class="cat_tit">
-                        Правда ли,​ что из ок­на может выпасть только глупый кот?
+                
+                <!-- Pop-up Menu -->
+                <div id="menuPopup" class="menu-popup">
+                    <div class="menu-popup-content">
+                        <span class="close" onclick="toggleMenu()">&times;</span>
+                        <ul class="menu-popup-links">
+                            <li><a href="#practices">Практики</a></li>
+                            <li><a href="#consultation">Консультация</a></li>
+                            <li><a href="#team">Команда</a></li>
+                            <li><a href="#questions">Вопросы</a></li>
+                            <li><a href="#articles">Статьи</a></li>
+                            <li><a href="#contacts">Контакты</a></li>
+                        </ul>
                     </div>
-                    <div class="img"><img src="./img//icons/photo_2024-09-16_18-15-47.jpg" alt=""></div>
-                    <div class="img_icon">
-                        <div class="icon"><img src="./img/icons/Ellipse 1.svg" alt=""></div>
-                        <div class="img_tit">
-                            <div class="img_text">Ольга Мягченко</div>
-                            <div class="img_txt">
-                                Разобралась, почему кошки падают из окон
+                </div>
+                
+                
+                <a class="btn hivi" href="#openModal"><span class="btn_txt">Обратиться</span></a>
+            </header>
+            <div class="blank_text">
+                <div class="big_img">
+                    <img src="./img/icons/BLANC.png" alt="">
+                </div>
+                <div class="description">
+                    <p><a href="#">Помочь провести сделку по договору</a> <a href="#">Вывести деньги из ООО</a> <a
+                            href="#">Помочь с регистрацией ИП</a></p>
+                    <p><a href="#">Помочь с регуляторами</a> <a href="#">Обанкротиться</a> <a href="#">Нужно взыскать
+                            деньги с подрядчика</a> <a href="#">Разделить имущество</a></p>
+                    <p><a href="#">Вывести деньги из ООО</a> <a href="#">Вывести деньги из ООО</a> <a href="#">Помочь в
+                            арбитраже</a></p>
+                    <p><a href="#">Проконсультировать по законодательству</a> <a href="#">Провести бракоразводный
+                            процесс</a> <a href="#">Обанкротиться</a></p>
+                    <p><a href="#">Помочь с регуляторами</a> <a href="#">Снять обвинения</a> <a href="#">Помочь уволить
+                            сотрудника</a></p>
+                </div>
+
+                <div class="big_pages">
+                    <div class="pages">
+                        <div class="page">
+                            <div class="help_kons">
+                                <p class="kons_txt">Коллектив</p>
+                                <div class="help_circle"></div>
+                            </div>
+                            <div class="page_text">
+                                <h1 class="page_tit">
+                                    Компетенции и знания, доказанные <div class="orange_tit">многолетним опытом
+                                        и победами</div>
+                                </h1>
+                            </div>
+                        </div>
+                        <div class="page">
+                            <h4 class="page_txt">Арбитражные споры</h4>
+                            <p class="page_desc">Сопровождаем экономические и иные споры в арбитражных судах
+                                и коммерческих
+                                арбитражах во всех регионах России, представляем в арбитражных судах интересы компаний и
+                                физических
+                                лиц</p>
+                        </div>
+
+                    </div>
+                    <div class="pages a">
+                        <h4 class="page_txt">Строительное право и девелопмент</h4>
+                        <p class="page_desc">Защищаем организации, работающие в области строительства, проектирования,
+                            геодезии и землеустройства. Ведем строительство объектов и сделки с недвижимостью.</p>
+                    </div>
+                    <div class="pages b">
+                        <h4 class="page_txt">Экологическое право</h4>
+                        <p class="page_desc">Консультируем в области экологического права, сопровождаем получение
+                            лицензий.</p>
+                    </div>
+                    <div class="pages c">
+                        <h4 class="page_txt">Юридическое сопровождение</h4>
+                        <p class="page_desc">Осуществляем полное юридическое сопровождение компании</p>
+                    </div>
+                    <div class="pages d">
+                        <h4 class="page_txt">Семейное право </h4>
+                        <p class="page_desc">Консультируем и помогаем выигрывать споры, сопровождаем заключение сложных
+                            брачных договоров и соглашений о разделе совместно нажитого имущества</p>
+                    </div>
+                    <div class="pages e">
+                        <h4 class="page_txt">Корпоративное и налоговое право</h4>
+                        <p class="page_desc">Помогаем простроить структуру компании, сопровождаем M&A- сделки,
+                            консультируем по налоговым режимам</p>
+                    </div>
+
+
+
+                </div>
+
+                <div class="custom-block">
+                    <div class="icon">*</div>
+                    <p>Если вашей проблемы нет в списке — это не значит, что мы не можем с ней помочь. Напишите нам,
+                        вместе мы разберемся.</p>
+                </div>
+
+
+
+
+
+                <div class="blank_main">
+                    <div class="blank_help">
+                        <div class="help_kons">
+                            <p class="kons_txt">Консультация</p>
+                            <div class="help_circle"></div>
+                        </div>
+                        <div class="helpik">
+                            <div class="help_tit">При первом обращении <div class="help_desc">расскажем о возможном
+                                    объеме правовой помощи</div>
+                            </div>
+                        </div>
+
+                        <div class="help_btns">
+                            <div id="openModal" class="modal">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+
+                                        <div class="modal-body">
+                                            <a href="#close" title="Close" class="close">×</a>
+                                            <h1>Оставьте заявку</h1>
+                                            <p>Мы свяжемся с вами в течение суток. Если вы раскроете суть обращения — мы
+                                                сможем предложить первые шаги для решения проблемы</p>
+                                            <div class="input-field">
+                                                <label for="name">Ваше имя</label>
+                                                <input type="text" id="name" placeholder="Введите ваше имя">
+                                            </div>
+                                            <div class="input-field">
+                                                <label for="phone">Контактный номер</label>
+                                                <input type="text" id="phone" placeholder="Введите ваш номер телефона">
+                                            </div>
+                                            <div class="input-field">
+                                                <label for="problem">Расскажите о проблеме</label>
+                                                <textarea id="problem" placeholder="Опишите вашу проблему"></textarea>
+                                            </div>
+                                            <div class="checkbox-field">
+                                                <input type="checkbox" id="agree">
+                                                <label for="agree">Согласен с политикой обработки персональных
+                                                    данных</label>
+                                            </div>
+                                            <button>Отправить заявку</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="btn" href="#openModal"><span class="btn_txt">Оставить заявку</span></a>
+
+                            <!-- Кнопки WhatsApp и Telegram -->
+                            <div class="social_btns">
+                                <a href="https://wa.me/номер" target="_blank" class="social_btn whatsapp">
+                                    <img src="./img/icons/Vector (8).svg" alt="" class="icon">
+                                </a>
+                                <a href="https://t.me/username" target="_blank" class="social_btn telegram">
+                                    <img src="./img/icons/Vector (9).svg" alt="" class="icon">
+                                </a>
                             </div>
                         </div>
                     </div>
-                    <div class="img__txt">
-                        Многие уверены, что их кошки умеют оценивать опасность высоты,
-                        поэтому никогда не выпрыгнут из окна.
+                </div>
+
+                <div class="team">
+                    <div class="help_kons">
+                        <p class="kons_txt">Коллектив</p>
+                        <div class="help_circle"></div>
                     </div>
-                    <div class="img__txt">
-                        Но статистика говорит об обратном: ежегодно тысячи кошек выпадают из
-                        окон и получают травмы разной степени тяжести. Некоторые животные
-                        погибают, другие теряются, и найти их удается далеко не всегда.
+                    <h2 class="team_tit">Мы выработали свой стиль, правила и методы, чтобы делать работу лучше прочих
+                    </h2>
+                    <p class="team_txt">Помогаем простроить структуру компании, сопровождаем M&A-сделки, консультируем
+                        по налоговым режимам.</p>
+
+                    <div class="women">
+                        <div class="woman">
+                            <img src="./img/icons/anya.jpg" alt="" class="woman_img photo">
+                            <div class="woman_info">
+                                <p class="woman_name">Анастасия Брагина</p>
+                                <p class="woman_prof">Руководитель</p>
+                            </div>
+                        </div>
+                        <div class="woman">
+                            <img src="./img/icons/mariya.jpg" alt="" class="wom_img photo">
+                            <div class="woman_info">
+                                <p class="woman_name">Мария Тихомирова</p>
+                                <p class="woman_prof">Маркетолог</p>
+                            </div>
+                        </div>
+                        <div class="woman">
+                            <img src="./img/icons/polina.jpg" alt="" class="wo_img photo">
+                            <div class="woman_info">
+                                <p class="woman_name">Полина Таратина</p>
+                                <p class="woman_prof">Юрист</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="img__txt">
-                        Почему так происходит и означает ли это, что домашние кошки глупые,
-                        разбираемся в этой статье
+                </div>
+
+                <div class="accordion">
+                    <div class="help_kons acc">
+                        <p class="kons_txt">Ответы на вопросы</p>
+                        <div class="help_circle"></div>
                     </div>
-                    <div class="intelligence">
-                        Как интеллект кошки влияет на&nbsp;вероятность падения
+                    <div class="accordion-item">
+                        <button class="accordion-header">Сколько стоят ваши услуги?</button>
+                        <div class="accordion-content">
+                            <p>Стоимость услуг рассчитывается индивидуально для каждого клиента и зависит от сложности
+                                необходимых действий, необходимых услуг, и иных факторов. В любом случае, при первом
+                                обращении мы сможем детально обсудить объем необходимой помощи и рассказать о ее
+                                стоимости.</p>
+                        </div>
                     </div>
-                    <div class="int_tit">
-                        Кошки никогда не прыгают из окна специально. Падение — это всегда
-                        случайность, которая может произойти с любым котом. Даже если ваш
-                        питомец знает команды, регулярно решает головоломки и вообще умница,
-                        это не гарантирует того, что он никогда не выпадет из окна по
-                        неосторожности.
+                    <div class="accordion-item">
+                        <button class="accordion-header">Какой порядок работы при оказании юридических услуг?</button>
+                        <div class="accordion-content">
+                            <p>Описание порядка работы при оказании юридических услуг.</p>
+                        </div>
                     </div>
-                    <div class="int_tit">
-                        По этой же причине кошку невозможно приучить не выпадать из окон.
-                        Как человека нельзя приучить, например, не спотыкаться. Поэтому
-                        неважно, насколько умный или глупый ваш кот: это может произойти с
-                        любым животным.
+                    <div class="accordion-item">
+                        <button class="accordion-header">Как быстро пройдет суд?</button>
+                        <div class="accordion-content">
+                            <p>Описание, сколько времени может занять судебный процесс.</p>
+                        </div>
                     </div>
-                    <div class="int_txt">
-                        Безопасность высотных «полетов» для кошек сильно преувеличена.
-                        Лучший способ защитить своего питомца — сетки-антикошки. С их
-                        помощью питомец сможет безопасно исследовать окружающий мир, а вы —
-                        спокойно оставлять окна открытыми и наслаждаться свежим воздухом.
+                    <div class="accordion-item">
+                        <button class="accordion-header">Мне нужно будет участвовать в судебных заседаниях?</button>
+                        <div class="accordion-content">
+                            <p>Информация о том, нужно ли личное присутствие в суде.</p>
+                        </div>
                     </div>
-                    <div class="int__tit">Читайте также</div>
-                    <div class="frame flex">
+                    <div class="accordion-item">
+                        <button class="accordion-header">Как проходит консультация: в офисе или онлайн?</button>
+                        <div class="accordion-content">
+                            <p>Описание вариантов консультаций: очно в офисе или онлайн.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="art">
+                    <div class="titre">
+                        <div class="titre_txt">
+                            <h1>Пишем о сложном</h1>
+                            <h2>на человеческом языке</h2>
+                        </div>
+                        <a href="gazete.html" class="titre-btn">Все статьи</a>
+                    </div>
+
+                    <div class="frame">
                         <div class="frame1">
                             <div class="frame_tit">Сколько стоит открыть ИП</div>
                             <div class="frame_txt">Мария Тихомирова, консультант</div>
@@ -512,42 +336,55 @@
                         </div>
                     </div>
                 </div>
+
+
+
+
             </div>
-        </section>
 
-    </div>
-    <div class="footer">
-        <div class="footer_top">
-            <h2>Свяжитесь с нами, мы разберемся</h2>
-            <div class="contacts">
-                <div class="contact-item">
-                    <p>Позвоните</p>
-                    <p><a href="tel:+79214306384">+7 921 430 63 84</a></p>
-
-                </div>
-                <div class="contact-item">
-                    <p>Напишите</p>
-                    <p><a href="mailto:blond@legal.ru">blond@legal.ru</a></p>
-                    <p><a href="https://t.me/blondlegal" target="_blank">@blondlegal</a></p>
-                </div>
-                <div class="contact-item">
-                    <p>Общайтесь лично</p>
-                    <p>Санкт-Петербург, улица Торфяная, дом 17, литер Б</p>
-                </div>
+            <div class="blank_txt">
+                <p class="min_txt">Юридическая помощь с 2018 года</p>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>ИП Бородина Анастасия Алексеевна</p>
-            <div>
-                <a href="#">Политика конфиденциальности</a>
-                <span>|</span>
-                <a href="#">Дизайн — Понеделка</a>
+        <div class="footer">
+            <div class="footer_top">
+                <h2>Свяжитесь с нами, мы разберемся</h2>
+                <div class="contacts">
+                    <div class="contact-item">
+                        <p>Позвоните</p>
+                        <p><a href="tel:+79214306384">+7 921 430 63 84</a></p>
+
+                    </div>
+                    <div class="contact-item">
+                        <p>Напишите</p>
+                        <p><a href="mailto:blond@legal.ru">blond@legal.ru</a></p>
+                        <p><a href="https://t.me/blondlegal" target="_blank">@blondlegal</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <p>Общайтесь лично</p>
+                        <p>Санкт-Петербург, улица Торфяная, дом 17, литер Б</p>
+                    </div>
+                </div>
             </div>
-            <p>2024</p>
+            <div class="footer-bottom">
+                <p>ИП Бородина Анастасия Алексеевна</p>
+                <div>
+                    <a href="#">Политика конфиденциальности</a>
+                    <span>|</span>
+                    <a href="#">Дизайн — Понеделка</a>
+                </div>
+                <p>2024</p>
+            </div>
         </div>
+
+
+
+
+
+
     </div>
-
-
+    <script src="js/core.js"></script>
 </body>
+
 
 </html>

@@ -98,6 +98,6 @@ $(".close_popap").click(function () {
 
 
 function toggleMenu() {
-    const navLinks = document.querySelector('.nav-links');
-    navLinks.classList.toggle('show');
+    var popup = document.getElementById("menuPopup");
+    popup.classList.toggle("active"); // Добавляем или удаляем класс active
 }

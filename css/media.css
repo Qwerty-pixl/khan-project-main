@@ -18,8 +18,33 @@
 		padding: 100px;
 	}
 	.a{
-		margin: 0;
+		margin-left: 0;
 	}
+	.b{
+		margin-left: 0;
+	}
+	.c{
+		margin-left: 0;
+	}
+	.d{
+		margin-left: 0;
+	}
+	.e{
+		margin-left: 0;
+	}
+	.hivi{
+		margin-bottom: -700px;
+	}
+	
+    .menu-icon {
+        display: block;
+        margin-bottom: -1650px;
+		margin-left: 200px;
+		background: #fff;
+		padding: 16px;
+		border-radius: 32px;
+    }
+	
 }
 
 @media screen and (max-width: 780px) {
@@ -41,8 +66,13 @@
 
 	.women {
 		flex-direction: column;
-		display: block;
+		display: flex;
+		align-items: center;
 	}
+	.helpik{
+		margin: 0;
+	}
+	
 }
 
 @media screen and (max-width: 540px) {
