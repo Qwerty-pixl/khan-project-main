@@ -2,6 +2,17 @@
 	.container {
 		max-width: 960px;
 	}
+	.footer h2 {
+        width: 100%;
+        margin: 0;
+    }
+	.footer{
+		padding: 100px;
+	}
+	.blank_header{
+		display: flex;
+		justify-content: center;
+	}
 }
 
 @media screen and (max-width: 990px) {
