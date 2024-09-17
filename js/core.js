@@ -62,6 +62,43 @@ document.querySelectorAll('.accordion-header').forEach(button => {
 
 
 
+let currentIndex = 0;
+let isAnimating = false;
+const pages = document.querySelectorAll('.block-container .page, .block-container .pages');
+const totalPages = pages.length;
+
+window.addEventListener('scroll', () => {
+    const container = document.querySelector('.block-container');
+    const containerTop = container.getBoundingClientRect().top;
+
+    // Если контейнер по центру экрана
+    if (containerTop <= window.innerHeight / 2 && containerTop >= -window.innerHeight / 2 && !isAnimating) {
+        document.body.classList.add('scroll-stop');
+        startAnimation();
+    }
+});
+
+function startAnimation() {
+    isAnimating = true;
+    setTimeout(() => {
+        currentIndex = (currentIndex + 1) % totalPages;
+        pages.forEach((page, index) => {
+            const offset = index - currentIndex;
+            page.style.transform = `translateX(${offset * 100}vw)`;
+        });
+
+        if (currentIndex === totalPages - 1) {
+            stopAnimation();
+        } else {
+            setTimeout(startAnimation, 1000); // задержка между перелистываниями
+        }
+    }, 1000);
+}
+
+function stopAnimation() {
+    isAnimating = false;
+    document.body.classList.remove('scroll-stop');
+}
 
 
 
@@ -116,3 +153,41 @@ function resetForm() {
 
 
 
+
+
+let items = document.querySelectorAll('.slid .item');
+let active = 3;
+function loadShow(){
+    items[active].style.transform = `none`;
+    items[active].style.zIndex = 1;
+    items[active].style.filter = 'none';
+    items[active].style.opacity = 1;
+    // show after
+    let stt = 0;
+    for(var i = active + 1; i < items.length; i ++){
+        stt++;
+        items[i].style.transform = `translateX(${120*stt}px) scale(${1 - 0.2*stt}) perspective(16px) rotateY(-1deg)`;
+        items[i].style.zIndex = -stt;
+        items[i].style.filter = 'blur(5px)';
+        items[i].style.opacity = stt > 2 ? 0 : 0.6;
+    }
+     stt = 0;
+    for(var i = (active - 1); i >= 0; i --){
+        stt++;
+        items[i].style.transform = `translateX(${-120*stt}px) scale(${1 - 0.2*stt}) perspective(16px) rotateY(1deg)`;
+        items[i].style.zIndex = -stt;
+        items[i].style.filter = 'blur(5px)';
+        items[i].style.opacity = stt > 2 ? 0 : 0.6;
+    }
+}
+loadShow();
+let next = document.getElementById('next');
+let prev = document.getElementById('prev');
+next.onclick = function(){
+   active = active + 1 < items.length ?  active + 1 : active;
+   loadShow();
+}
+prev.onclick = function(){
+    active = active - 1 >= 0 ? active -1 : active;
+    loadShow();
+}
