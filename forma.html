@@ -1,219 +1,127 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Форма в попапе</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        input{
-            outline: none;
-        }
-        /* Стили для попапа */
-        .popup {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            display: none;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .popup-content {
-            background-color: white;
-            padding: 20px;
-            max-width: 587px;
-            width: 100%;
-            text-align: left;
-            border-radius: 10px;
-            position: relative;
-        }
-
-        .popup h1 {
-            font-family: "Inter", sans-serif;
-            font-size: 36px;
-            font-weight: 400;
-            color: #191D22;
-            margin-bottom: 10px;
-        }
-
-        .popup p {
-            font-family: "Inter", sans-serif;
-            font-size: 16px;
-            color: #79828D;
-            margin-bottom: 20px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 16px;
-            font-family: "Inter", sans-serif;
-        }
-
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: #B3B3B3;
-        }
-
-        .form-group textarea {
-            resize: none;
-            height: 100px;
-        }
-
-        .groups {
-            display: flex;
-            gap: 20px;
-        }
-
-        .form-group label {
-            font-family: "Inter", sans-serif;
-            font-size: 16px;
-            color: #79828D;
-            margin-bottom: 5px;
-            display: block;
-        }
-
-        /* Стили для кнопки */
-        .btn {
-            width: 100%;
-            padding: 15px;
-            background-color: #FF6A00;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            font-family: "Inter", sans-serif;
-            text-align: center;
-        }
-
-        .btn:hover {
-            background-color: #e65a00;
-        }
-
-        /* Сообщение об успешной отправке */
-        .success-message {
-            display: none;
-            text-align: center;
-        }
-
-        .success-message .checkmark {
-            font-size: 40px;
-            color: #FF6A00;
-            margin-bottom: 20px;
-        }
-
-        .success-message h2 {
-            font-family: "Inter", sans-serif;
-            font-size: 24px;
-            color: #191D22;
-            margin-bottom: 10px;
-        }
-
-        .success-message p {
-            font-family: "Inter", sans-serif;
-            font-size: 16px;
-            color: #79828D;
-        }
-
-        /* Закрывающий крестик */
-        .close-btn {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            font-size: 20px;
-            cursor: pointer;
-            color: #B3B3B3;
-        }
-
-        .close-btn:hover {
-            color: #000;
-        }
-    </style>
+    <title>UrbanGreen Tech</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </head>
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+    }
+
+    header {
+        background-color: #f4f4f4;
+        padding: 20px;
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    #hero-slider {
+        height: 50vh;
+    }
+
+    .swiper-slide {
+        font-size: 2rem;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #moving-text {
+        margin: 20px 0;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    .marquee span {
+        display: inline-block;
+        padding: 0 15px;
+        animation: moveText 15s linear infinite;
+    }
+
+    @keyframes moveText {
+        0% {
+            transform: translateX(100%);
+        }
+
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+
+    #solutions-slider {
+        height: 300px;
+    }
+</style>
 
 <body>
+    <header>
+        <nav>
+            <!-- Navigation Menu -->
+            <ul>
+                <li>Home</li>
+                <li>Services</li>
+                <li>Technology</li>
+                <li>Contact Us</li>
+            </ul>
+        </nav>
+    </header>
 
-    <!-- Кнопка для открытия попапа -->
-    <button class="btn" onclick="openPopup()">Оставить заявку</button>
-
-    <!-- Попап с формой -->
-    <div class="popup" id="popup">
-        <div class="popup-content">
-            <span class="close-btn" onclick="closePopup()">×</span>
-            <div id="form-container">
-                <h1 class="sat">Оставьте заявку</h1>
-                <p class="sar">Мы свяжемся с вами в течение суток. Если вы раскроете суть обращения — мы сможем предложить
-                    первые шаги для решения проблемы</p>
-                <form id="popupForm">
-                    <div class="groups">
-                        <div class="form-group">
-                            <label class="form_text" for="name">Ваше имя</label>
-                            <input type="text" id="name" name="name" placeholder="Введите ваше имя" required>
-                        </div>
-                        <div class="form-group">
-                            <label class="form_text" for="phone">Контактный номер</label>
-                            <input type="tel" id="phone" name="phone" placeholder="Введите ваш номер телефона" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="form_text" for="message">Расскажите о проблеме</label>
-                        <textarea id="message" name="message" placeholder="Опишите вашу проблему" required></textarea>
-                    </div>
-                    <button type="submit" class="btn">Отправить заявку</button>
-                </form>
+    <main>
+        <section id="hero-slider" class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">Reimagining Urban Spaces</div>
+                <div class="swiper-slide">Greening the World</div>
             </div>
-            <div class="success-message" id="successMessage">
-                <div class="checkmark">✔</div>
-                <h2>Спасибо, заявка принята</h2>
-                <p>Мы свяжемся с вами в течение суток и предложим первые шаги для решения задачи</p>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+        </section>
+
+        <section id="moving-text">
+            <div class="marquee">
+                <span>Green Infrastructure Design</span>
+                <span>Smart Irrigation Systems</span>
+                <span>Farm Automation</span>
+                <!-- More Text -->
             </div>
-        </div>
-    </div>
+        </section>
 
-    <script>
-        // Функция для открытия попапа
-        function openPopup() {
-            document.getElementById('popup').style.display = 'flex';
-        }
+        <section id="solutions-slider" class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="solution1.jpg" alt="Solution 1">
+                    <p>90% Water Savings</p>
+                </div>
+                <div class="swiper-slide">
+                    <img src="solution2.jpg" alt="Solution 2">
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+        </section>
+    </main>
 
-        // Функция для закрытия попапа
-        function closePopup() {
-            document.getElementById('popup').style.display = 'none';
-            resetForm();
-        }
-
-        // Обработка отправки формы
-        document.getElementById('popupForm').addEventListener('submit', function (event) {
-            event.preventDefault(); // Предотвращаем стандартную отправку формы
-
-            // Скрываем форму и показываем сообщение об успешной отправке
-            document.getElementById('form-container').style.display = 'none';
-            document.getElementById('successMessage').style.display = 'block';
-        });
-
-        // Функция сброса формы
-        function resetForm() {
-            document.getElementById('popupForm').reset();
-            document.getElementById('form-container').style.display = 'block';
-            document.getElementById('successMessage').style.display = 'none';
-        }
-    </script>
-
+    <script src="script.js"></script>
 </body>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 1,
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+    });
+
+</script>
 
 </html>

@@ -2,7 +2,6 @@
 html,
 body {
     height: 100%;
-    background: #EEF0F1;
 }
 
 * {
@@ -1399,38 +1398,37 @@ button:hover {
 
 .a {
     width: 100%;
-    max-width: 848px;
-    margin-left: 20px;
+    max-width: 850px;
 }
 
 .b {
     width: 100%;
-    max-width: 810px;
-    margin-left: 38px;
+    max-width: 800px;
+    margin-left: 10px;
 }
 
 .c {
     width: 100%;
-    max-width: 770px;
-    margin-left: 55px;
+    max-width: 750px;
+    margin-left: 35px;
 }
 
 .d {
     width: 100%;
-    max-width: 720px;
-    margin-left: 75px;
-    backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.192);
-    filter: blur(0.9px);
+    max-width: 700px;
+    margin-left: 60px;
 }
 
 .e {
     width: 100%;
-    max-width: 670px;
-    margin-left: 95px;
-    backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.192);
-    filter: blur(2px);
+    max-width: 650px;
+    margin-left: 85px;
+}
+
+.f {
+    width: 100%;
+    max-width: 600px;
+    margin-left: 110px;
 }
 
 .big_pages {
@@ -1594,7 +1592,7 @@ button:hover {
 
 
 .custom-block {
-    padding: 20px;
+    padding: 60px 20px 20px;
     text-align: center;
     position: relative;
     width: 400px;
@@ -2031,14 +2029,17 @@ body {
 .block-container {
     display: flex;
     overflow: hidden;
-    height: 100vh; /* чтобы контейнер занимал всю высоту экрана */
+    height: 100vh;
+    /* чтобы контейнер занимал всю высоту экрана */
     justify-content: center;
     align-items: center;
     position: relative;
 }
 
-.page, .pages {
-    min-width: 100vw; /* каждый блок занимает всю ширину экрана */
+.page,
+.pages {
+    min-width: 100vw;
+    /* каждый блок занимает всю ширину экрана */
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -2060,7 +2061,8 @@ body {
 }
 
 .scroll-stop {
-    overflow: hidden; /* остановка скроллинга */
+    overflow: hidden;
+    /* остановка скроллинга */
 }
 
 
@@ -2073,58 +2075,88 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  
-  body {
+}
+
+body {
     font-family: Arial, sans-serif;
     background-color: #f7f7f7;
     overflow-x: hidden;
-  }
-  
-  .kontainer {
+}
+
+.kontainer {
     padding: 40px;
     max-width: 900px;
     margin: 0 auto;
     position: relative;
     margin-top: 400px;
     margin-bottom: 100px;
-  }
-  
-  .title {
-    margin-bottom: 30px;
+}
+
+.title {
+    background: #fff;
+    padding: 15px;
+}
+
+.title_tit {
+    padding: 80px;
     text-align: center;
-  }
-  
-  h1 {
+}
+
+h1 {
     font-size: 26px;
     color: #333;
     font-weight: 400;
-  }
-  
-  .content {
+}
+
+.content {
     position: relative;
-    padding: 20px 0;
-  }
-  
-  .block {
+}
+
+.block {
     background-color: white;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-    margin-bottom: -130px; /* Уменьшаем отступ для перекрытия блоков */
-    padding: 20px;
+    padding: 60px;
     font-size: 18px;
     position: relative;
     z-index: 1;
     transition: transform 0.3s ease, z-index 0.3s;
-  }
-  
-  .block p {
+}
+
+.block p {
     color: #666;
     font-size: 14px;
-  }
-  
-  .block:hover {
+}
+
+.block:hover {
     z-index: 5;
     transform: translateY(-10px);
-  }
-  
-  
+}
+
+.titi {
+    font-family: "Inter";
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 50.4px;
+    letter-spacing: -0.04em;
+    text-align: center;
+}
+
+.block_desc {
+    font-family: "Inter";
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+    text-align: left;
+
+}
+
+.block-desc {
+    font-family: "Inter" ;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    text-align: left;
+    color: var(--Text-Secondary, #79828D);
+
+}
